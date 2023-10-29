@@ -1,0 +1,10 @@
+{% extends 'listDB.html.twig' %}
+
+{% block body %}
+    <h1>List Ordered by Author</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

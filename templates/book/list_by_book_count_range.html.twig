@@ -1,0 +1,17 @@
+{% extends 'listDB.html.twig' %}
+
+{% block body %}
+    <h1>List of Authors by Book Count Range</h1>
+    <form method="get">
+        <label for="min_books">Minimum Books:</label>
+        <input type="number" id="min_books" name="min_books" value="{{ minBooks }}">
+        <label for="max_books">Maximum Books:</label>
+        <input type="number" id="max_books" name="max_books" value="{{ maxBooks }}">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.name }} - Number of Books: {{ author.bookCount }}
+        {% endfor %}
+    </ul>
+{% endblock %}

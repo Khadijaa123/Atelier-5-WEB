@@ -1,0 +1,29 @@
+{{form_start(f)}}
+{{form_label(f)}}
+{{form_widget(f)}}
+{{form_end(f)}}
+
+<h1>List of Authors Ordered by Email</h1>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.name }} - {{ author.email }}</li>
+        {% endfor %}
+    </ul>
+    
+<table border="3">
+    <tr>
+        <td>id</td>
+        <td>username</td>
+        <td>email</td>
+        <td>action</td>
+    </tr>
+    {% for a in author %}
+    <tr>
+        <td>{{a.id}}</td> 
+        <td>{{a.username}}</td>  
+        <td>{{a.email}}</td>
+        <td><a href="{{path('editauthor', {'id':a.id})}}">edit</a></td> 
+        <td><a href="{{path('deleteauthor', {'id':a.id})}}">delete</a></td>  
+    </tr>
+    {% endfor %}
+</table>           

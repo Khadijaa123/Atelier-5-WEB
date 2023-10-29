@@ -1,0 +1,10 @@
+{% extends 'listDB.html.twig' %}
+
+{% block body %}
+    <h1>List of Books Published Between 2014-01-01 and 2018-12-31</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} (Published on: {{ book.publicationDate|date('Y-m-d') }})
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'listDB.html.twig' %}
+
+{% block body %}
+    <h1>List of Books Published Before 2023 with Authors Having More Than 35 Books</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author.name }} ({{ book.publicationYear }})
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,23 @@
+<table border="1">
+<tr>
+<td> title</td>
+<td> publication date </td>
+<td> published</td>
+<td> category</td>
+<td> author </td>
+<td> Actions </td>
+
+</tr>
+{% for a in books %}
+<tr>
+<td>{{ a.title }}</td>
+<td>{{a.publicationDate| date( 'd/m/Y') }}</td>
+
+<td>{{ a.published }}</td>
+<td>{{ a.category }} </td>
+<td> {{ a.author.username }}  </td>
+   <td> <a href="{{ path('book_OneDB', {'ref': a.ref}) }}">Details</a>
+   <a href="{{ path('updateBook', {'ref': a.ref}) }}">edit</a>
+   <a href="{{ path('deleteBook', {'ref': a.ref}) }}">delete</a> </td></tr>
+{% endfor %}
+</table>

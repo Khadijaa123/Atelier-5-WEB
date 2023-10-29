@@ -1,0 +1,16 @@
+{% extends 'listDB.html.twig' %}
+
+{% block body %}
+    <h1>Search by Ref</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.ref) }}
+    {{ form_end(form) }}
+
+    <h2>Search</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - {{ book.ref }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
